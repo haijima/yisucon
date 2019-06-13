@@ -2,13 +2,13 @@
   "json_class": "Chef::Environment",
   "default_attributes": {
     "env": "development",
-    "start_date": "CHANGE HERE",
-    "end_date": "CHANGE HERE",
-    "portal_host": "CHANGE HERE",
-    "db_host": "CHANGE HERE",
+    "start_date": "2019/06/17 10:30:00",
+    "end_date": "2019/06/17 17:29:59",
+    "portal_host": "127.0.0.1",
+    "db_host": "127.0.0.1",
     "db_port": 3306,
-    "db_user": "CHANGE HERE",
-    "db_pass": "CHANGE HERE",
+    "db_user": "root",
+    "db_pass": "",
     "db_name": "isucon",
     "secret_key": "GENERATE SECRET KEY"
   }

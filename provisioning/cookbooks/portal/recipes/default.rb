@@ -78,6 +78,7 @@ package "gcc-c++"
 bash "install-portal" do
   user "root"
   cwd ::File.dirname(File.dirname(File.dirname(Chef::Config[:file_cache_path])))
+  environment 'PATH' => "/usr/local/bin:#{ENV['PATH']}"
   code <<-"END"
 set -exu -o pipefail
 
@@ -85,8 +86,9 @@ mkdir -p /var/www/portal
 rsync -av --delete portal/ /var/www/portal/
 
 cd /var/www/portal
-sudo npm install
-NODE_ENV=#{node["env"]} sudo npm run build:prod:ngc
+npm install -g yarn
+yarn install
+NODE_ENV=#{node["env"]} npm run build:prod:ngc
   END
 end
 

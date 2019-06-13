@@ -10,7 +10,6 @@ import { SSEService } from './sse.service';
 import { AuthGuardService } from './authguard.service';
 import { NotificationService } from './notification.service';
 import { EventHubService } from './eventhub.service';
-import { NgC3Module } from './ng-c3.module';
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -18,8 +17,6 @@ const MODULES = [
   RouterModule,
   FormsModule,
   ReactiveFormsModule,
-
-  NgC3Module,
 ];
 
 const PIPES = [

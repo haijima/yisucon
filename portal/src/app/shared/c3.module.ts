@@ -1,6 +1,7 @@
-import { NgModule, Component, ChangeDetectionStrategy, OnInit, OnChanges, Input, ViewChild } from '@angular/core';
+import { NgModule, Component, ChangeDetectionStrategy, OnInit, OnChanges, Input, ViewChild, SimpleChanges } from '@angular/core';
 
 import '../../../node_modules/c3/c3.css';
+// import * as c3 from 'c3'
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,7 +11,7 @@ import '../../../node_modules/c3/c3.css';
     `.chart {width: 100%;}`,
   ]
 })
-class ChartComponent implements OnInit, OnChanges {
+export class ChartComponent implements OnInit, OnChanges {
   private chart: c3.ChartAPI;
   private c3obj: any;
 
@@ -32,7 +33,7 @@ class ChartComponent implements OnInit, OnChanges {
     this.update();
   }
 
-  ngOnChanges() {
+  ngOnChanges(changes: SimpleChanges) {
     this.update();
   }
 

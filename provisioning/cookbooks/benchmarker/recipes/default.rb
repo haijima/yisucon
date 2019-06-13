@@ -57,6 +57,7 @@ end
 bash "install-golang" do
   user "root"
   cwd "/usr/local/src/golang"
+  environment 'PATH' => "/usr/local/bin:#{ENV['PATH']}"
   code <<-"END"
 set -exu -o pipefail
 

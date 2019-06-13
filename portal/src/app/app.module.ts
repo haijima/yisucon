@@ -23,6 +23,14 @@ export function isDev() {
   return !isProd();
 }
 
+export function startDate(): boolean {
+  return process.env.START_DATE;
+}
+
+export function endDate(): boolean {
+  return process.env.END_DATE;
+}
+
 @NgModule({
   declarations: [ AppComponent, MdlDirective ],
   imports: [
@@ -37,8 +45,8 @@ export function isDev() {
   providers: [
     { provide: 'isProd', useFactory: isProd },
     { provide: 'isDev', useFactory: isDev },
-    { provide: 'startDate', useValue: process.env.START_DATE },
-    { provide: 'endDate', useValue: process.env.END_DATE }
+    { provide: 'startDate', useValue: startDate },
+    { provide: 'endDate', useValue: endDate }
   ]
 })
 export class AppModule {

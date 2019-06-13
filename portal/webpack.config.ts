@@ -4,12 +4,12 @@ var clone = require('js.clone');
 var webpackMerge = require('webpack-merge');
 var extractTextPlugin = require('extract-text-webpack-plugin');
 
-var ENV = process.env.NODE_ENV === 'production' ? 'production' : 'development';
+var ENV = process.env['NODE_ENV'] === 'production' ? 'production' : 'development';
 
 // 環境変数がない場合は、現在時刻が開催時刻となり、終了時刻は7日後となる
 var now = Date.now();
-var START_DATE = isNaN(Date.parse(process.env.START_DATE)) ? new Date() : process.env.START_DATE;
-var END_DATE = isNaN(Date.parse(process.env.END_DATE)) ? new Date(now + 7 * 24 * 60 * 60 * 1000) : process.env.END_DATE;
+var START_DATE = isNaN(Date.parse(process.env['START_DATE'])) ? new Date() : process.env['START_DATE'];
+var END_DATE = isNaN(Date.parse(process.env['END_DATE'])) ? new Date(now + 7 * 24 * 60 * 60 * 1000) : process.env['END_DATE'];
 
 
 export var commonPlugins = [

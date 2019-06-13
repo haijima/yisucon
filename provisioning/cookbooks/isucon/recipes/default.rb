@@ -343,6 +343,7 @@ package "java-#{java_version}-openjdk-devel"
 bash "install-webapp" do
   user "root"
   cwd ::File.dirname(File.dirname(File.dirname(Chef::Config[:file_cache_path])))
+  environment 'PATH' => "/home/centos/.rbenv/shims:/home/centos/.rbenv/bin:/usr/local/bin:#{ENV['PATH']}"
   code <<-"END"
 set -ex
 mkdir -p /var/www
